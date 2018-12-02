@@ -2,10 +2,10 @@
 #This will build the lastest master from github or existing files.  Contact turtleflax for questions
 buildDir=~/buildCNX305
 
-echo This script will build the lastest PIVX master from github in your homedrive
+echo This script will build the lastest CoinX master from github in your homedrive
 echo It will DELETE $buildDir and ALL contents!!!!!!
 echo This script contains attended installs that require input
-echo To build from CNX Master just run the script.  Otherwise download the zip for what you want to build and extract it to $buildDir/PIVX before running.   Then call the script with UseExisting for an argument
+echo To build from CNX Master just run the script.  Otherwise download the zip for what you want to build and extract it to $buildDir/CNX before running.   Then call the script with UseExisting for an argument
 
 read -p "Press [Enter] key if you understand and accept"
 sudo apt-get update
@@ -28,7 +28,7 @@ else
         mv CNX-*/ CNX/
 fi
 
-cd $buildDir/CNX/
+cd $buildDir/Coinx/
 
 ####GET DEPENDANCIES####
 sudo add-apt-repository ppa:bitcoin/bitcoin
@@ -45,7 +45,7 @@ cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 make install
 ####COMPILE SOURCE CODE####
-cd $buildDir/CNX
+cd $buildDir/Coinx
 ./autogen.sh
 ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 make
