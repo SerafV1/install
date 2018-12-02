@@ -5,7 +5,7 @@ buildDir=~/buildCNX305
 echo This script will build the lastest PIVX master from github in your homedrive
 echo It will DELETE $buildDir and ALL contents!!!!!!
 echo This script contains attended installs that require input
-echo To build from PIVX Master just run the script.  Otherwise download the zip for what you want to build and extract it to $buildDir/PIVX before running.   Then call the script with UseExisting for an argument
+echo To build from CNX Master just run the script.  Otherwise download the zip for what you want to build and extract it to $buildDir/PIVX before running.   Then call the script with UseExisting for an argument
 
 read -p "Press [Enter] key if you understand and accept"
 sudo apt-get update
@@ -28,7 +28,7 @@ else
         mv CNX-*/ CNX/
 fi
 
-cd $buildDir/PIVX/
+cd $buildDir/CNX/
 
 ####GET DEPENDANCIES####
 sudo add-apt-repository ppa:bitcoin/bitcoin
